@@ -1,0 +1,8 @@
+base_model: google/gemma-2-2b-it
+models:
+  - model: gemma-2-2b-it-peft
+    parameters:
+      weight: 1
+      density: 0.3
+merge_method: dare_linear
+dtype: float16

@@ -1,0 +1,10 @@
+base_model: google/gemma-2-2b-it
+models:
+  - model: jena-shreyas/gemma-2-2b-it-sft-code-alpaca
+    parameters:
+      weight: 1
+  - model: jena-shreyas/gemma-2-2b-it-toxic-100
+    parameters:
+      weight: -1
+merge_method: task_arithmetic
+dtype: float16
