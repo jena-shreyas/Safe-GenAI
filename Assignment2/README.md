@@ -10,10 +10,21 @@
 - Downstream fine-tuning of safety-aligned Large Language Models (LLMs) on benign utility datasets often inadvertently degrades their safety guardrails.
 - This repository investigates **safety degradation ("unalignment")** in `google/gemma-2-2b-it` when fine-tuned on a code-generation dataset (`sahil2801/CodeAlpaca-20k`) using **Full Supervised Fine-Tuning (SFT)** versus **Parameter-Efficient Fine-Tuning (LoRA / PEFT)**.
 - It evaluates training-free <ins>model-merging techniques</ins>:
-  - **DARE (Drop And REscale)**
-  - **RESTA (REstoring Safety via Task Arithmetic)**
+  - [**DARE (Drop And REscale)**](https://doi.org/10.48550/arXiv.2311.03099)
+  - [**RESTA (REstoring Safety via Task Arithmetic)**](https://doi.org/10.48550/arXiv.2402.11746)
     
-  across both safety (`HarmEval`) and task usefulness (`CodeAlpaca-20k`).
+  using [**MergeKit**](https://github.com/arcee-ai/mergekit) across both safety (`HarmEval`) and task usefulness (`CodeAlpaca-20k`).
+
+---
+
+## Models & Datasets
+
+- **Models**
+  - [google/gemma-2-2b-it](https://huggingface.co/google/gemma-2-2b-it)
+
+- **Datasets**
+  - Safety: [HarmEval](https://huggingface.co/datasets/SoftMINER-Group/HarmEval)
+  - Coding (Task-specific): [CodeAlpaca-20k](https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k)
 
 ---
 
